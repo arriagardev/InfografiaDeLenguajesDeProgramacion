@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Evolución de los Lenguajes de Programación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #f7fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #FD813C;
+            border: 4px solid #00A6ED;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -21px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #4a5568;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 py-12">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#00A6ED] to-[#DD2D7A]">La Evolución de los Lenguajes de Programación</h1>
+            <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Un viaje visual a través de las décadas que dieron forma a la tecnología moderna, desde el código máquina hasta los paradigmas actuales.</p>
+        </header>
+
+        <main class="relative">
+            <div class="timeline-line hidden md:block"></div>
+            <div class="space-y-16">
+                 <section id="antecedentes" class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                    <div class="relative pl-12 md:pl-0 md:pr-12 timeline-item order-last md:order-first">
+                        <h2 class="text-3xl font-bold text-[#FFD800]">Siglo XIX - 1930s: Los Pioneros</h2>
+                        <p class="mt-4 text-gray-300">Antes de las computadoras modernas, las mentes visionarias ya conceptualizaban el software. Sus contribuciones sentaron las bases lógicas que permitirían el desarrollo de la programación.</p>
+                        <div class="mt-6 bg-gray-800 p-6 rounded-lg">
+                           <h4 class="font-bold text-lg text-[#00A6ED]">Charles Babbage & Ada Lovelace</h4>
+                           <p class="text-gray-400 mt-2">En la década de 1840, Ada Lovelace escribió el primer algoritmo para la Máquina Analítica de Babbage, convirtiéndose en la primera programadora del mundo. Entendió que una máquina podía manipular algo más que solo números.</p>
+                        </div>
+                        <div class="mt-6 bg-gray-800 p-6 rounded-lg">
+                           <h4 class="font-bold text-lg text-[#DD2D7A]">Konrad Zuse</h4>
+                           <p class="text-gray-400 mt-2">En 1941, Zuse creó la Z3, la primera computadora programable funcional y completamente automática. Su trabajo sentó las bases para el concepto de software como un conjunto de instrucciones.</p>
+                        </div>
+                    </div>
+                     <div class="mt-8 md:mt-0 order-first md:order-last">
+                        <div class="bg-gray-800 rounded-lg shadow-2xl p-6 text-center">
+                            <h3 class="text-xl font-bold text-center mb-4">Un vistazo al futuro</h3>
+                            <p class="text-gray-400 mb-4">Los conceptos de estos pioneros no solo trataban de cálculos, sino de la idea de la "computación" como una manipulación de símbolos regida por reglas.</p>
+                            <div class="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#7D49C8] to-[#FD813C]">1</div>
+                            <p class="text-2xl font-bold mt-2">Primer Algoritmo</p>
+                            <p class="text-gray-400">Escrito por Ada Lovelace.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="era-1" class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                    <div class="relative pl-12 md:pl-0 md:pr-12 timeline-item">
+                        <h2 class="text-3xl font-bold text-[#00A6ED]">1940s-1960s: El Amanecer de la Programación Lineal</h2>
+                        <p class="mt-4 text-gray-300">La primera y segunda generación de lenguajes introdujeron una abstracción crucial. Los primeros lenguajes de alto nivel como FORTRAN y COBOL se basaron en un paradigma lineal, donde las instrucciones se ejecutaban en una secuencia fija.</p>
+                        <div class="mt-6 flex space-x-4">
+                            <div class="bg-gray-800 p-4 rounded-lg text-center flex-1">
+                                <span class="text-2xl font-bold text-[#FD813C]">FORTRAN</span>
+                                <p class="text-sm text-gray-400">Ciencia e Ingeniería</p>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg text-center flex-1">
+                                <span class="text-2xl font-bold text-[#DD2D7A]">COBOL</span>
+                                <p class="text-sm text-gray-400">Negocios y Datos</p>
+                            </div>
+                             <div class="bg-gray-800 p-4 rounded-lg text-center flex-1">
+                                <span class="text-2xl font-bold text-[#FFD800]">LISP</span>
+                                <p class="text-sm text-gray-400">Inteligencia Artificial</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 md:mt-0">
+                        <div class="bg-gray-800 rounded-lg shadow-2xl p-6">
+                            <h3 class="text-xl font-bold text-center mb-4">Adopción de Lenguajes Pioneros</h3>
+                            <p class="text-sm text-gray-400 text-center mb-4">El gráfico muestra la adopción inicial de los lenguajes de la era lineal, demostrando su rápida aceptación en sus respectivos campos.</p>
+                            <div class="chart-container h-64 md:h-80">
+                                <canvas id="paradigmChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="era-2" class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                     <div class="relative pl-12 md:pl-0 md:pr-12 timeline-item order-last md:order-first">
+                        <h2 class="text-3xl font-bold text-[#DD2D7A]">1970s: La Revolución Estructurada</h2>
+                        <p class="mt-4 text-gray-300">Esta década trajo un enfoque en la claridad y la calidad del código. La programación estructurada mejoró la fiabilidad y el mantenimiento del software. El lenguaje C, en particular, se convirtió en la piedra angular del desarrollo de sistemas operativos y sigue siendo influyente hoy en día.</p>
+                        <div class="mt-6 bg-gray-800 p-6 rounded-lg">
+                           <h4 class="font-bold text-lg text-[#FFD800]">El Legado de C:</h4>
+                           <p class="text-gray-400 mt-2">Creado en 1972, C ofreció un control de bajo nivel sin precedentes con una sintaxis de alto nivel. Su eficiencia y portabilidad lo convirtieron en el lenguaje de facto para construir sistemas como Unix y, posteriormente, inspiró a C++, Java y C#.</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 md:mt-0 order-first md:order-last">
+                        <div class="bg-gray-800 rounded-lg shadow-2xl p-6">
+                            <h3 class="text-xl font-bold text-center mb-4">Nivel de Abstracción de Lenguajes de Programación</h3>
+                             <p class="text-sm text-gray-400 text-center mb-4">Este gráfico conceptual ilustra cómo los lenguajes han evolucionado, moviéndose de la complejidad del código máquina a la simplicidad de la sintaxis orientada a la lógica humana.</p>
+                            <div class="chart-container h-80">
+                                <canvas id="abstractionChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="era-3" class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                    <div class="relative pl-12 md:pl-0 md:pr-12 timeline-item">
+                        <h2 class="text-3xl font-bold text-[#7D49C8]">1980s-1990s: El Auge de la POO</h2>
+                        <p class="mt-4 text-gray-300">La Programación Orientada a Objetos (POO) revolucionó el desarrollo de software al permitir a los programadores modelar el mundo real en "objetos". Esto llevó a la creación de aplicaciones más grandes y complejas, y al nacimiento de gigantes como Java, Python y C++.</p>
+                         <div class="mt-6 grid grid-cols-2 gap-4">
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-[#00A6ED]">Java</h4>
+                                <p class="text-sm text-gray-400">"Escribe una vez, ejecuta en cualquier lugar."</p>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-[#FFD800]">Python</h4>
+                                <p class="text-sm text-gray-400">Enfoque en la legibilidad y simplicidad.</p>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-[#DD2D7A]">C++</h4>
+                                <p class="text-sm text-gray-400">Rendimiento y control para sistemas complejos.</p>
+                            </div>
+                             <div class="bg-gray-800 p-4 rounded-lg">
+                                <h4 class="font-bold text-[#FD813C]">JavaScript</h4>
+                                <p class="text-sm text-gray-400">El lenguaje de la web interactiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 md:mt-0">
+                         <div class="bg-gray-800 rounded-lg shadow-2xl p-6 text-center">
+                            <h3 class="text-xl font-bold text-center mb-4">Un Nuevo Paradigma</h3>
+                            <p class="text-gray-400 mb-4">La POO se convirtió en el estándar de la industria para construir software robusto y escalable, dominando el panorama del desarrollo durante más de dos décadas.</p>
+                            <div class="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#7D49C8] to-[#FD813C]">4</div>
+                            <p class="text-2xl font-bold mt-2">Lenguajes Clave</p>
+                            <p class="text-gray-400">Definieron la era de la POO.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="era-4" class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                    <div class="relative pl-12 md:pl-0 md:pr-12 timeline-item order-last md:order-first">
+                        <h2 class="text-3xl font-bold text-[#FD813C]">2000s - Presente: La Era Digital</h2>
+                        <p class="mt-4 text-gray-300">La era moderna se caracteriza por la especialización. Han surgido nuevos lenguajes para abordar desafíos específicos en desarrollo web, computación en la nube, ciencia de datos y sistemas móviles, con un fuerte enfoque en la seguridad, la concurrencia y la productividad del desarrollador.</p>
+                        <div class="mt-6 flex flex-wrap gap-2">
+                           <span class="bg-gray-700 text-sm font-medium px-3 py-1 rounded-full text-[#00A6ED]">Go</span>
+                           <span class="bg-gray-700 text-sm font-medium px-3 py-1 rounded-full text-[#DD2D7A]">Rust</span>
+                           <span class="bg-gray-700 text-sm font-medium px-3 py-1 rounded-full text-[#FFD800]">Swift</span>
+                           <span class="bg-gray-700 text-sm font-medium px-3 py-1 rounded-full text-[#7D49C8]">C#</span>
+                           <span class="bg-gray-700 text-sm font-medium px-3 py-1 rounded-full text-[#FD813C]">Ruby</span>
+                        </div>
+                    </div>
+                     <div class="mt-8 md:mt-0 order-first md:order-last">
+                        <div class="bg-gray-800 rounded-lg shadow-2xl p-6">
+                            <h3 class="text-xl font-bold text-center mb-4">Áreas de Especialización</h3>
+                            <p class="text-sm text-gray-400 text-center mb-4">Los lenguajes modernos están diseñados para dominar nichos específicos, desde el desarrollo de sistemas seguros hasta la creación de aplicaciones móviles fluidas.</p>
+                            <ul class="space-y-3 mt-6 text-gray-300">
+                                <li class="flex items-center"><span class="text-[#FD813C] mr-2 text-2xl">☁️</span> Computación en la Nube y Concurrencia (Go)</li>
+                                <li class="flex items-center"><span class="text-[#DD2D7A] mr-2 text-2xl">🛡️</span> Seguridad de Memoria y Sistemas (Rust)</li>
+                                <li class="flex items-center"><span class="text-[#00A6ED] mr-2 text-2xl">📱</span> Desarrollo Móvil Moderno (Swift)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="text-center mt-20 pt-8 border-t border-gray-700">
+            <p class="text-gray-500">Infografía creada para ilustrar la rica historia de la innovación en software.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = currentLine ? currentLine + ' ' + word : word;
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            return Array.isArray(label) ? label.join(' ') : label;
+        };
+
+        const commonChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#f7fafc'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: '#9ca3af' },
+                    grid: { color: '#4a5568' }
+                },
+                x: {
+                    ticks: { color: '#9ca3af' },
+                    grid: { color: 'transparent' }
+                }
+            }
+        };
+
+        const paradigmCtx = document.getElementById('paradigmChart').getContext('2d');
+        new Chart(paradigmCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Ciencia/Ingeniería', 'Negocios', 'IA'],
+                datasets: [{
+                    label: 'Áreas de Adopción',
+                    data: [45, 40, 15],
+                    backgroundColor: ['#00A6ED', '#DD2D7A', '#FFD800'],
+                    borderColor: '#1a202c',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                 maintainAspectRatio: false,
+                 responsive: true,
+                 plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#f7fafc',
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        const abstractionCtx = document.getElementById('abstractionChart').getContext('2d');
+        new Chart(abstractionCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Código Máquina', 'FORTRAN', 'C', 'Python', 'Go'].map(wrapLabel),
+                datasets: [{
+                    label: 'Nivel de Abstracción',
+                    data: [10, 40, 60, 90, 85],
+                    backgroundColor: ['#FD813C', '#00A6ED', '#DD2D7A', '#FFD800', '#7D49C8'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                indexAxis: 'y',
+                 scales: {
+                    y: {
+                        ticks: { color: '#9ca3af', font: { size: 10 } },
+                        grid: { color: 'transparent' }
+                    },
+                    x: {
+                        min: 0,
+                        max: 100,
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: '#4a5568' }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
